@@ -1,0 +1,18 @@
+{
+    "name": "bcerati/webservices",
+    "description": "WebServices",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boris Cerati",
+            "email": "contact@boris-web.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WS\\": "./src"
+        }
+    },
+    "require": {}
+}
