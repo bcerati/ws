@@ -1,8 +1,7 @@
 <?php
 namespace WS\Calculator;
 
-use WS\Entity\Circle;
-use WS\Entity\Square;
+use WS\Entity\ShapeInterface;
 
 /**
  * Class AreaCalculator
@@ -15,18 +14,21 @@ class AreaCalculator
   public function __construct($shapes = array())
   {
     $this->shapes = $shapes;
+
+    foreach ($shapes as $shape) {
+        if (!$shape instanceof ShapeInterface) {
+            throw new \Exception('Not an instance of ShapeInterface');
+        }
+    }
   }
 
   public function sum()
   {
     $area = [];
 
-    foreach($this->shapes as $shape) {
-      if($shape instanceof Square) {
-        $area[] = $shape->length ** 2;
-      } else if ($shape instanceof Circle) {
-        $area[] = M_PI * $shape->radius ** 2;
-      }
+    /** @var ShapeInterface $shape */
+      foreach($this->shapes as $shape) {
+        $area[] = $shape->area();
     }
 
     return array_sum($area);

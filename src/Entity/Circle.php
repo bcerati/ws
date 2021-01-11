@@ -5,7 +5,7 @@ namespace WS\Entity;
  * Class Circle
  * @package WS\Entity
  */
-class Circle
+class Circle implements ShapeInterface
 {
   /** @var int */
   public $radius;
@@ -14,4 +14,9 @@ class Circle
   {
     $this->radius = $radius;
   }
+
+    public function area(): float
+    {
+        return M_PI * $this->radius ** 2;
+    }
 }

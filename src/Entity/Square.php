@@ -5,7 +5,7 @@ namespace WS\Entity;
  * Class Square
  * @package WS\Entity
  */
-class Square
+class Square implements ShapeInterface
 {
   /** @var int */
   public $length;
@@ -14,4 +14,9 @@ class Square
   {
     $this->length = $length;
   }
+
+    public function area(): float
+    {
+        return $this->length ** 2;
+    }
 }
