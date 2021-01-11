@@ -14,8 +14,8 @@ class User
   /** @var string */
   protected $name;
 
-  /** @var string */
-  protected $address;
+    /** @var string */
+    protected $address;
 
   /**
    * @return int
