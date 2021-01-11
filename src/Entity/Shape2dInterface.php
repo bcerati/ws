@@ -2,11 +2,10 @@
 namespace WS\Entity;
 
 /**
- * Interface ShapeInterface
+ * Interface Shape2dInterface
  * @package WS\Entity
  */
-interface ShapeInterface {
+interface Shape2dInterface extends ShapedInterface
+{
   public function area(): int;
-
-  public function volume(): float;
 }

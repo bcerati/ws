@@ -1,7 +1,7 @@
 <?php
 namespace WS\Entity;
 
-class Square implements ShapeInterface
+class Square implements Shape2dInterface
 {
   /** @var int */
   protected $length;
@@ -29,11 +29,5 @@ class Square implements ShapeInterface
   public function area(): int
   {
     return $this->getLength() ** 2;
-  }
-
-  /** @inheritdoc */
-  public function volume(): float
-  {
-    return 0.0;
   }
 }
