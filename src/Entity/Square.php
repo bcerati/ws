@@ -1,23 +1,19 @@
 <?php
 namespace WS\Entity;
 
-class Square extends Rectangle
+class Square implements ShapeInterface
 {
-  /** @inheritdoc */
-  public function setHeight(int $value): Rectangle
-  {
-    $this->width = $value;
-    $this->height = $value;
+    protected float $side;
 
+    /** @inheritdoc */
+  public function setSide(int $value): Square
+  {
+    $this->side = $value;
     return $this;
   }
 
-  /** @inheritdoc */
-  public function setWidth(int $value): Rectangle
-  {
-    $this->width = $value;
-    $this->height = $value;
-
-    return $this;
-  }
+    public function area(): float
+    {
+        return $this->side ** 2;
+    }
 }

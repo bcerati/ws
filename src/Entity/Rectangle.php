@@ -5,7 +5,7 @@ namespace WS\Entity;
  * Class Rectangle
  * @package WS\Entity
  */
-class Rectangle
+class Rectangle implements ShapeInterface
 {
   /** @var int */
   protected $width;
@@ -50,4 +50,9 @@ class Rectangle
 
     return $this;
   }
+
+    public function area(): float
+    {
+        return $this->width * $this->height;
+    }
 }
